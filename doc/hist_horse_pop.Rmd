@@ -1,5 +1,6 @@
 ---
 title: "Historical horse population in Canada"
+bibliography: horse_refs.bib
 params:
   province: "Alberta"
 output: github_document
@@ -83,3 +84,5 @@ province_plot
 ```
 
 In this plot, we see that the horse population in `r params$province` has declined rapidly since the early 1900s.
+
+# References
