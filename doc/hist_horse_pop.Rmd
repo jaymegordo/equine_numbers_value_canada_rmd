@@ -1,8 +1,8 @@
 ---
 title: "Historical horse population in Canada"
 bibliography: horse_refs.bib
-params:
-  province: "Alberta"
+params: 
+  province: "Alberta" 
 output: github_document
 ---
 
@@ -33,7 +33,7 @@ Horse population data were sourced from the [Government of Canada's Open Data we
 
 ## Methods
 
-The R programming language and the following R packages were used to perform the analysis: knitr and tidyverse. The code used to perform the analysis and create this report can be found here: <https://github.com/ttimbers/equine_numbers_value_canada_rmd>.
+The R programming language and the following R [@R] packages were used to perform the analysis: knitr [@knitr] and tidyverse [@tidyverse]. The code used to perform the analysis and create this report can be found here: <https://github.com/ttimbers/equine_numbers_value_canada_rmd>.
 
 ## Results
 
@@ -66,9 +66,9 @@ kable(
   caption = "Table 1. Maximum and minimum number of horses for each province between 1940 - 1972")
 ```
 
-Below we zoom in and look at the province of Alberta:
+Below we zoom in and look at the province of `r params$province`:
 
-```{r plot province, fig.width=5, fig.height=4, fig.cap = "Fig 2. Horse Counts by province", out.width = "100%"}
+```{r plot province, fig.width=5, fig.height=4, fig.cap = paste0("Fig 2. Horse Counts for: ", params$province), out.width = "100%"}
 province_plot <- horse_pop %>% 
   filter(GEO == "Alberta") %>% 
   ggplot(aes(x = Ref_Date, y = Value)) +
@@ -85,4 +85,4 @@ province_plot
 
 In this plot, we see that the horse population in `r params$province` has declined rapidly since the early 1900s.
 
-# References
+## References
